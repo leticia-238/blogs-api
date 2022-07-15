@@ -1,30 +1,33 @@
-'use strict';
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('PostCategories', {
-      postId:{
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-        references: {
-          model: 'BlogPosts',
-          key: 'id'
-        }
-      },
-      categoryId:{
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-        references: {
-          model: 'Categories',
-          key: 'id'
-        }
-      },
-    });
+const { DataTypes } = require('sequelize');
+
+const attributes = {
+  postId: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
+    references: {
+      model: 'BlogPosts',
+      key: 'id',
+    },
   },
-  down: async (queryInterface, Sequelize) => {
+  categoryId: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    onUpdate: 'CASCADE',
+    onDelete: 'CASCADE',
+    references: {
+      model: 'Categories',
+      key: 'id',
+    },
+  },
+};
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable('PostCategories', attributes);
+  },
+  down: async (queryInterface) => {
     await queryInterface.dropTable('PostCategories');
-  }
+  },
 };

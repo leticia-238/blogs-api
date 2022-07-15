@@ -1,20 +1,23 @@
-'use strict';
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Categories', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      name: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-    });
+const { DataTypes } = require('sequelize');
+
+const attributes = {
+  id: {
+    allowNull: false,
+    autoIncrement: true,
+    primaryKey: true,
+    type: DataTypes.INTEGER,
   },
-  down: async (queryInterface, Sequelize) => {
+  name: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+};
+
+module.exports = {
+  up: async (queryInterface) => {
+    await queryInterface.createTable('Categories', attributes);
+  },
+  down: async (queryInterface) => {
     await queryInterface.dropTable('Categories');
-  }
+  },
 };
