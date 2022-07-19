@@ -74,5 +74,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "763c4900-89d0-49d4-9efc-09a7f1693b2f",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "cf4d9de2-1a73-4b94-ae18-cefc442dd219",
+    "name": "post user",
+    "url": "localhost:3000/user",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-07-19T21:21:29.659Z",
+    "modified": "2022-07-19T22:38:58.879Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"displayName\": \"Brett Wiltshire\",\n  \"email\": \"bret@email.com\",\n  \"password\": \"123456\",\n  \"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e1cb2b37-b4d7-4be7-8ce6-71a9c85b54dd",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "cf4d9de2-1a73-4b94-ae18-cefc442dd219",
+    "name": "post invalid user ",
+    "url": "localhost:3000/user",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2022-07-19T21:26:15.398Z",
+    "modified": "2022-07-19T21:27:40.271Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"displayName\": \"Brettppppp\",\n  \"email\": \"brett@email\",\n  \"password\": \"123456\",\n  \"image\": \"http://4.bp.blogspot.com/_YA50adQ-7vQ/S1gfR_6ufpI/AAAAAAAAAAk/1ErJGgRWZDg/S45/brett.png\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
