@@ -7,10 +7,13 @@ const errorHandler = (err, _req, res, _next) => {
     case 'NotFoundError':
       res.status(404).json({ message });
       break;
+    case 'SequelizeUniqueConstraintError':
+      res.status(409).json({ message: 'User already registered' });
+      break;
     case 'UnprocessableEntityError':
       res.status(422).json({ message });
       break;
-    default: res.status(500).send({ message });
+    default: res.status(500).send({ message, name });
       break;
   }
 };
