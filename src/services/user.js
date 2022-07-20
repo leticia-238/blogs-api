@@ -1,4 +1,5 @@
 const { User } = require('../database/models');
+const ConflictError = require('../errors/ConflictError');
 const ValidationError = require('../errors/ValidationError');
 const { userSchema } = require('./schemas');
 
@@ -17,7 +18,8 @@ const userService = {
   },
   
   create: async (user) => {
-    await User.create(user);
+    const [, created] = await User.findOrCreate({ where: user });
+    if (!created) throw new ConflictError('User already registered');
   },
   
   validateUserBody: async (user) => {
