@@ -12,5 +12,8 @@ module.exports = {
     email: Joi.string().email().required(),
     password: Joi.string().min(6).required(),
     image: Joi.string().required(),
-  }),
+  }).required(),
+  categorySchema: Joi.object({
+    name: Joi.string().required(),
+  }).required(),
 };

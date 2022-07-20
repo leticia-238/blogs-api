@@ -200,5 +200,29 @@
       "type": "oauth2"
     },
     "tests": []
+  },
+  {
+    "_id": "2a96c732-823e-490c-843e-1d594efc6ad4",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "2a5e888f-b23d-4248-9470-d8226b11af61",
+    "name": "post categories",
+    "url": "localhost:3000/categories",
+    "method": "POST",
+    "sortNum": 80000,
+    "created": "2022-07-20T16:35:50.823Z",
+    "modified": "2022-07-20T16:49:39.609Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYnJldEBlbWFpbC5jb20iLCJpYXQiOjE2NTgyNzAzMzgsImV4cCI6MTY1ODg3NTEzOH0.pvGZ23Bv9Thtfq1-_olGDGYG3_bb9z59rECkmIuCo9E"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"Teste2\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
