@@ -210,7 +210,7 @@
     "method": "POST",
     "sortNum": 80000,
     "created": "2022-07-20T16:35:50.823Z",
-    "modified": "2022-07-20T16:49:39.609Z",
+    "modified": "2022-07-20T17:50:20.023Z",
     "headers": [
       {
         "name": "Authorization",
@@ -220,9 +220,28 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"Teste2\"\n}",
+      "raw": "{\n    \"name\": \"Teste78\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "8002592a-b257-4a80-8d53-6e8955322094",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "2a5e888f-b23d-4248-9470-d8226b11af61",
+    "name": "get categories all",
+    "url": "localhost:3000/categories",
+    "method": "GET",
+    "sortNum": 90000,
+    "created": "2022-07-20T20:50:33.539Z",
+    "modified": "2022-07-20T20:51:56.041Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYnJldEBlbWFpbC5jb20iLCJpYXQiOjE2NTgyNzAzMzgsImV4cCI6MTY1ODg3NTEzOH0.pvGZ23Bv9Thtfq1-_olGDGYG3_bb9z59rECkmIuCo9E"
+      }
+    ],
+    "params": [],
     "tests": []
   }
 ]

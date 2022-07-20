@@ -3,6 +3,14 @@ const { Category } = require('../database/models');
 const ConflictError = require('../errors/ConflictError');
 
 const categoriesService = {
+  findAll: async () => {
+    const categories = await Category.findAll({ 
+      attributes: ['id', 'name'],
+      raw: true, 
+    });
+    return categories;
+  },
+  
   create: async (category) => {
     const [createdCategory, created] = await Category.findOrCreate(
       { where: category }, 
