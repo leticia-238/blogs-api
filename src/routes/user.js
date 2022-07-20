@@ -6,6 +6,8 @@ const userRouter = Router();
 
 userRouter.get('/', auth, userController.findAll);
 
+userRouter.get('/:id', auth, userController.findById);
+
 userRouter.post('/', userController.create);
 
 module.exports = userRouter;

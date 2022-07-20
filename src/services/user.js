@@ -1,5 +1,6 @@
 const { User } = require('../database/models');
 const ConflictError = require('../errors/ConflictError');
+const NotFoundError = require('../errors/NotFoundError');
 const ValidationError = require('../errors/ValidationError');
 const { userSchema } = require('./schemas');
 
@@ -9,6 +10,13 @@ const userService = {
     return result.map(({ id, displayName, email, image }) => (
       { id, displayName, email, image }
     ));
+  },
+  
+  findById: async (userId) => {
+    const user = await User.findByPk(userId);
+    if (!user) throw new NotFoundError('User does not exist');
+    const { id, displayName, email, image } = user;
+    return { id, displayName, email, image };
   },
   
   findByEmailAndPassword: async ({ email, password }) => {

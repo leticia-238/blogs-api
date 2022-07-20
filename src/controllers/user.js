@@ -7,6 +7,12 @@ const userController = {
     res.status(200).json(result);
   },
   
+  findById: async (req, res) => {
+    const { id } = req.params;
+    const result = await userService.findById(id);
+    res.status(200).json(result);
+  },
+  
   create: async (req, res) => {
     const user = req.body;
     await userService.validateUserBody(user);
