@@ -3,14 +3,14 @@ const userService = require('../services/user');
 
 const userController = {
   findAll: async (_req, res) => {
-    const result = await userService.findAll();
-    res.status(200).json(result);
+    const users = await userService.findAll();
+    res.status(200).json(users);
   },
   
   findById: async (req, res) => {
     const { id } = req.params;
-    const result = await userService.findById(id);
-    res.status(200).json(result);
+    const user = await userService.findById(id);
+    res.status(200).json(user);
   },
   
   create: async (req, res) => {

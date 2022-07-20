@@ -6,21 +6,27 @@ const { userSchema } = require('./schemas');
 
 const userService = {
   findAll: async () => {
-    const result = await User.findAll({ raw: true });
-    return result.map(({ id, displayName, email, image }) => (
-      { id, displayName, email, image }
-    ));
+    const users = await User.findAll({ 
+      attributes: ['id', 'displayName', 'email', 'image'],
+      raw: true, 
+    });
+    return users;
   },
   
   findById: async (userId) => {
-    const user = await User.findByPk(userId);
+    const user = await User.findByPk(userId, {
+      attributes: ['id', 'displayName', 'email', 'image'],
+      raw: true,
+    });
     if (!user) throw new NotFoundError('User does not exist');
-    const { id, displayName, email, image } = user;
-    return { id, displayName, email, image };
+    return user;
   },
   
-  findByEmailAndPassword: async ({ email, password }) => {
-    const user = await User.findOne({ where: { email, password } });
+  findByEmailAndPassword: async (email, password) => {
+    const user = await User.findOne({ 
+      where: { email, password },
+      raw: true,
+    });
     if (!user) throw new ValidationError('Invalid fields');
     return user;
   },

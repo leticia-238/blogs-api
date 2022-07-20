@@ -5,8 +5,9 @@ const authController = {
   login: async (req, res) => {
     const login = req.body;
     await authService.validateLoginBody(login);
-    await userService.findByEmailAndPassword(login);
-    const token = authService.generateToken(login.email);
+    const { email, password } = login;
+    await userService.findByEmailAndPassword(email, password);
+    const token = authService.generateToken(email);
     res.status(200).json({ token });
   },
 };
