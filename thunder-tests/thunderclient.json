@@ -112,5 +112,49 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "26377f41-a2af-4018-80c9-0cdf35af3490",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "cf4d9de2-1a73-4b94-ae18-cefc442dd219",
+    "name": "get user all",
+    "url": "localhost:3000/user",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-07-19T23:42:32.606Z",
+    "modified": "2022-07-20T00:39:51.401Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYnJldEBlbWFpbC5jb20iLCJpYXQiOjE2NTgyNzAzMzgsImV4cCI6MTY1ODg3NTEzOH0.pvGZ23Bv9Thtfq1-_olGDGYG3_bb9z59rECkmIuCo9E"
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "oauth2"
+    },
+    "tests": []
+  },
+  {
+    "_id": "0d741953-1f60-4042-a727-584f6aa41895",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "cf4d9de2-1a73-4b94-ae18-cefc442dd219",
+    "name": "get user all unauthorized",
+    "url": "localhost:3000/user",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2022-07-20T00:38:30.276Z",
+    "modified": "2022-07-20T00:38:30.276Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjo1LCJkaXNwbGF5TmFtZSI6InVzdWFyaW8gZGUgdGVzdGUiLCJlbWFpbCI6InRlc3RlQGVtYWlsLmNvbSIsImltYWdlIjoibnVsbCJ9LCJpYXQiOjE2MjAyNDQxODcsImV4cCI6MTYyMDY3NjE4N30.Roc4byj6mYakYqd9LTCozU1hd9k_Vw5IWKGL4hcCVG8"
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "oauth2"
+    },
+    "tests": []
   }
 ]

@@ -1,21 +1,24 @@
+const errors = {
+  ValidationError: { code: 400 },
+  JsonWebTokenError: { 
+    code: 401, 
+    message: 'Expired or invalid token',
+  },
+  UnauthorizedError: { code: 401 },
+  NotFoundError: { code: 404 },
+  SequelizeUniqueConstraintError: { 
+    code: 409, 
+    message: 'User already registered',
+  },
+};
+
 const errorHandler = (err, _req, res, _next) => {
-  const { name, message } = err;
-  switch (name) {
-    case 'ValidationError':
-      res.status(400).json({ message });
-      break;
-    case 'NotFoundError':
-      res.status(404).json({ message });
-      break;
-    case 'SequelizeUniqueConstraintError':
-      res.status(409).json({ message: 'User already registered' });
-      break;
-    case 'UnprocessableEntityError':
-      res.status(422).json({ message });
-      break;
-    default: res.status(500).send({ message, name });
-      break;
-  }
+  const { name } = err;
+  
+  const status = errors[name].code || 500; 
+  const message = errors[name].message || err.message;
+  
+  res.status(status).send({ message });
 };
 
 module.exports = errorHandler;

@@ -2,6 +2,11 @@ const authService = require('../services/auth');
 const userService = require('../services/user');
 
 const userController = {
+  findAll: async (_req, res) => {
+    const result = await userService.findAll();
+    res.status(200).json(result);
+  },
+  
   create: async (req, res) => {
     const user = req.body;
     await userService.validateUserBody(user);
