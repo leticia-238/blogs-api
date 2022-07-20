@@ -6,10 +6,7 @@ const errors = {
   },
   UnauthorizedError: { code: 401 },
   NotFoundError: { code: 404 },
-  SequelizeUniqueConstraintError: { 
-    code: 409, 
-    message: 'User already registered',
-  },
+  ConflictError: { code: 409 },
 };
 
 const errorHandler = (err, _req, res, _next) => {
