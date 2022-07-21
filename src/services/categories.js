@@ -1,6 +1,7 @@
 const { categorySchema } = require('./schemas');
 const { Category } = require('../database/models');
 const ConflictError = require('../errors/ConflictError');
+const ValidationError = require('../errors/ValidationError');
 
 const categoriesService = {
   findAll: async () => {
@@ -8,6 +9,16 @@ const categoriesService = {
       attributes: ['id', 'name'],
       raw: true, 
     });
+    return categories;
+  },
+  
+  findByIds: async (categoryIds) => {
+    const categories = await Category.findAll({ 
+      where: { id: categoryIds },
+      attributes: ['id', 'name'],
+      raw: true, 
+    });
+    if (!categories.length) throw new ValidationError('"categoryIds" not found');
     return categories;
   },
   
