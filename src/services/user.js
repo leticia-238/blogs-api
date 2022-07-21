@@ -6,7 +6,7 @@ const { userSchema } = require('./schemas');
 const userService = {
   findAll: async () => {
     const users = await User.findAll({ 
-      attributes: ['id', 'displayName', 'email', 'image'],
+      attributes: { exclude: ['password'] },
       raw: true, 
     });
     return users;
@@ -14,7 +14,7 @@ const userService = {
   
   findById: async (userId) => {
     const user = await User.findByPk(userId, {
-      attributes: ['id', 'displayName', 'email', 'image'],
+      attributes: { exclude: ['password'] },
       raw: true,
     });
     if (!user) throw new NotFoundError('User does not exist');
@@ -24,7 +24,7 @@ const userService = {
   findByUser: async (userData) => {
     const user = await User.findOne({ 
       where: userData,
-      attributes: ['id', 'displayName', 'email', 'image'],
+      attributes: { exclude: ['password'] },
       raw: true,
     });
     return user;
