@@ -1,7 +1,6 @@
 const { User } = require('../database/models');
 const ConflictError = require('../errors/ConflictError');
 const NotFoundError = require('../errors/NotFoundError');
-const ValidationError = require('../errors/ValidationError');
 const { userSchema } = require('./schemas');
 
 const userService = {
@@ -22,12 +21,12 @@ const userService = {
     return user;
   },
   
-  findByEmailAndPassword: async (email, password) => {
+  findByUser: async (userData) => {
     const user = await User.findOne({ 
-      where: { email, password },
+      where: userData,
+      attributes: ['id', 'displayName', 'email', 'image'],
       raw: true,
     });
-    if (!user) throw new ValidationError('Invalid fields');
     return user;
   },
   
