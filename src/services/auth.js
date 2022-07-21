@@ -18,9 +18,7 @@ const authService = {
     return token;
   },
   
-  verifyToken: (token) => {
-    jwt.verify(token, secret);
-  },
+  verifyToken: (token) => jwt.verify(token, secret),
 };
 
 module.exports = authService;
