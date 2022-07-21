@@ -16,4 +16,11 @@ module.exports = {
   categorySchema: Joi.object({
     name: Joi.string().required(),
   }).required(),
+  postSchema: Joi.object({
+    title: Joi.string().required(),
+    content: Joi.string().required(),
+    categoryIds: Joi.array().items(Joi.number().required()),
+  }).required().messages({
+    'string.empty': 'Some required fields are missing',
+  }),
 };
