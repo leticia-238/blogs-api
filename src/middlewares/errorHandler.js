@@ -11,11 +11,11 @@ const errors = {
 
 const errorHandler = (err, _req, res, _next) => {
   const { name } = err;
-  
-  const status = errors[name] ? errors[name].code : 500; 
-  const message = errors[name] ? errors[name].message : err.message;
-  
-  res.status(status).send({ message });
+  if (errors[name]) {
+    const message = errors[name].message || err.message;
+    res.status(errors[name].code).json({ message });
+  }
+  res.status(500).send({ message: err.message });
 };
 
 module.exports = errorHandler;
