@@ -243,5 +243,72 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "f26ffda6-a651-4244-87cc-ce7907f4c1f2",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "e3b1b42a-cca0-417f-a987-23d320312e65",
+    "name": "post post",
+    "url": "localhost:3000/post",
+    "method": "POST",
+    "sortNum": 100000,
+    "created": "2022-07-20T21:31:59.464Z",
+    "modified": "2022-07-20T21:43:26.596Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYnJldEBlbWFpbC5jb20iLCJpYXQiOjE2NTgyNzAzMzgsImV4cCI6MTY1ODg3NTEzOH0.pvGZ23Bv9Thtfq1-_olGDGYG3_bb9z59rECkmIuCo9E"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\",\n  \"categoryIds\": [1, 2]\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "957cdb24-3e77-454e-813e-292ea80e27ad",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "e3b1b42a-cca0-417f-a987-23d320312e65",
+    "name": "post invalid post ",
+    "url": "localhost:3000/post",
+    "method": "POST",
+    "sortNum": 110000,
+    "created": "2022-07-20T21:43:45.713Z",
+    "modified": "2022-07-21T19:07:36.155Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYnJldEBlbWFpbC5jb20iLCJpYXQiOjE2NTgyNzAzMzgsImV4cCI6MTY1ODg3NTEzOH0.pvGZ23Bv9Thtfq1-_olGDGYG3_bb9z59rECkmIuCo9E"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"oo\",\n  \"content\": \"55\",\n  \"categoryIds\": [1,2]\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ff7fe1f7-dc3e-46e8-83f9-47bdbc16c100",
+    "colId": "f472b875-cbcb-4e5d-887c-03cd14f08ad8",
+    "containerId": "e3b1b42a-cca0-417f-a987-23d320312e65",
+    "name": "get post all",
+    "url": "localhost:3000/post",
+    "method": "GET",
+    "sortNum": 120000,
+    "created": "2022-07-21T19:15:44.588Z",
+    "modified": "2022-07-21T19:16:54.000Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYnJldEBlbWFpbC5jb20iLCJpYXQiOjE2NTgyNzAzMzgsImV4cCI6MTY1ODg3NTEzOH0.pvGZ23Bv9Thtfq1-_olGDGYG3_bb9z59rECkmIuCo9E"
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]

@@ -9,5 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     name: { allowNull: false, type: DataTypes.STRING },
   }, { timestamps: false });
   
+  Category.associate = ({ PostCategory }) => {
+    Category.hasMany(PostCategory, { foreignKey: 'categoryId' });
+  };
+  
   return Category;
 };
